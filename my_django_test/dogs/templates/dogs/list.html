@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>List all dog from the database</h3>
+<!--<p>{{all_dogs |length }}</p>-->
+
+<div class="container">
+
+    <ul>
+        {% for dog in all_dogs %}
+            <div>
+                <li>
+                    {{dog}}
+                </li>
+            </div>
+        {% endfor %}
+    </ul>
+
+</div>
+{% endblock %}

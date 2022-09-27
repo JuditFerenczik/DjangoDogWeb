@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="my-5">Which dog do you want to delete from the database?</h3>
+
+<div class="container mx-auto py-6">
+    <form action="" method="POST">
+        {% csrf_token %}
+       <label for="dog">Dogs:</label>
+        <select style="width:200px;" name="dog" id="dog">
+            {% for dog in all_dogs %}
+                <option value="{{ dog.pk }}">{{dog.name}} - {{dog.age}}</option>
+           {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
+</div>
+
+{% endblock %}

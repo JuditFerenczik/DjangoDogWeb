@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Hello, this is the new webpage!</h1>
+<h1>Last name is {{last_name}}</h1>
+<h2>Second element of the list {{test_list.1}}</h2>
+<h2>Inside the dict the value is {{test_dir.inside_key}}</h2>
+<h2>Last name formatted {{last_name | lower | capfirst}}</h2>
+<h2>First name length {{first_name | length}}</h2>
+
+<ul>
+{%for item in test_list %}
+{% if item == 2%}
+    <li> the number is {{item}}</li>
+{% else %}
+    <li>{{item}}</li>
+{% endif %}
+{% endfor %}
+</ul>
+<a href="{% url 'new_app:variable' %}">Click me to go to example page</a>
+ {% endblock %}
