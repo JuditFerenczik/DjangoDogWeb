@@ -3,13 +3,15 @@ from django.shortcuts import render, redirect
 from .models import *
 from django.views.generic import CreateView, ListView, DeleteView, DetailView, UpdateView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 
-class OwnerCreateView(CreateView):
+class OwnerCreateView(LoginRequiredMixin, CreateView):
     model = Owner
     fields = "__all__"
     success_url = reverse_lazy("dog_views:list_owner")
+
 
 
 class OwnerListView(ListView):
@@ -52,7 +54,7 @@ class DoggoDeleteView(DeleteView):
     success_url = reverse_lazy("dog_views:list_dog")
 
 
-class DoggoCreateView(CreateView):
+class DoggoCreateView(LoginRequiredMixin, CreateView):
     model = Doggo
     fields = "__all__"
     success_url = reverse_lazy("dog_views:list_dog")

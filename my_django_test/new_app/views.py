@@ -42,8 +42,8 @@ def num_page_view(request, num_page):
 
 
 def sample_view(request):
-    return render(request, 'new_app/template/example.html', context=my_var)
+    return render(request, 'new_app/templates/example.html', context=my_var)
 
 
 def variable_view(request):
-    return render(request, 'new_app/template/variable.html')
+    return render(request, 'new_app/templates/variable.html')

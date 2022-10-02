@@ -22,7 +22,12 @@ urlpatterns = [
     path('new_app/', include('new_app.urls')),
     path('dogs/', include('dogs.urls')),
     path('dogViews/', include('dog_views.urls')),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    #path("register", views.register, name="register"),
+    #path('login', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+    #path('logout', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
+
 ]
 
 handler404 = 'my_django_test.views.my_custom_page_not_found'
