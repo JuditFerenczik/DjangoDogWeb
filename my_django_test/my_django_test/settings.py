@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'dog_views.apps.DogViewsConfig',
     'new_app.apps.NewAppConfig',
     'dogs.apps.DogsConfig',
     'django.contrib.admin',

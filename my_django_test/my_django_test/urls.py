@@ -21,6 +21,7 @@ urlpatterns = [
     path('', views.home_page, name='base'),
     path('new_app/', include('new_app.urls')),
     path('dogs/', include('dogs.urls')),
+    path('dogViews/', include('dog_views.urls')),
     path('admin/', admin.site.urls)
 ]
 

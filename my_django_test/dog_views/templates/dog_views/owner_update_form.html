@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block content %}
+<div class="container d-flex justify-content-center"  >
+<form method="POST">
+    {% csrf_token %}
+        {{ owner }}
+
+  <input type="submit">
+
+</form>
+</div>
+{% endblock %}
+
+
+</body>
+</html>

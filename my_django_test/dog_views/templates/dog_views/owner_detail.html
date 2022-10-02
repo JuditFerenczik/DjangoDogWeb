@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+{%extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Owner</title>
+</head>
+<body>
+{% block content %}
+<p>Name: {{owner.name}}</p>
+<p>Age: {{owner.age}}</p>
+<a href="{% url 'dog_views:list_dog' %}">Go back to Dog list</a>
+{% endblock %}
+
+</body>
+</html>

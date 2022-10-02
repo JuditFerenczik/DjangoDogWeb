@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{%extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Dog detail</title>
+</head>
+<body>
+{% block content %}
+
+
+<div>
+    <p>Name: {{doggo.name}}</p>
+    <p>Age: {{doggo.age}}</p>
+    <p>Color: {{doggo.color}}</p>
+    <p>Breed: {{doggo.breed}}</p>
+    {% if doggo.isBiting %}
+        <p>Biting: Yes</p>
+    {% else %}
+        <p>Biting: No</p>
+    {% endif %}
+    {% if doggo.sex == "F" %}
+        <p>Sex: Female</p>
+    {% else %}
+        <p>Sex: Male</p>
+    {% endif %}
+    <p>Owner's name: {{doggo.owner}}</p>
+</div>
+<a href="{% url 'dog_views:list_dog' %}">Go back to Dog list</a>
+{% endblock %}
+</body>
+</html>

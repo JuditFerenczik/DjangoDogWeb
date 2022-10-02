@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{%extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Dog List</title>
+</head>
+<body>
+{% block content %}
+<ul>
+    {% for dog in dog_list %}
+    <li> {{dog }}</li>
+    <a href="delete_dog/{{dog.id}}"> Delete {{dog.name}}</a>
+    <a href="{% url 'dog_views:detail_dog' dog.id %}"> More about {{dog.name}}</a>
+    <a href="{% url 'dog_views:detail_owner' dog.owner.id %}"> About the owner({{dog.owner.name}})</a>
+     <a href="{% url 'dog_views:edit_dog' dog.id %}"> Edit ({{dog.name}})</a>
+    {% endfor %}
+</ul>
+{% endblock %}
+</body>
+</html>

@@ -6,25 +6,53 @@
     <title>Django website</title>
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!--   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 
-<body >
+<body style="padding-bottom: 80px;" >
+
+
+
+
+
 <nav class="bg-dark text-light navbar navbar-expand-lg navbar-dark ">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+      <ul class="navbar-nav">
+        <li>
           <a class="nav-link active" href="{% url 'base' %}">Home</a>
-        <a class="nav-link "  href="{% url 'new_app:example' %}">New_app</a>
-        <a class="nav-link" href="{% url 'dogs:list' %}">List</a>
-        <a class="nav-link" href="{% url 'dogs:add' %}">Add</a>
-        <a class="nav-link" href="{% url 'dogs:delete' %}" >Delete</a>
-      </div>
+        </li>
+        <li>
+          <a class=" nav-link"  href="{% url 'new_app:example' %}">New_app</a>
+        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarPDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dogs Basics
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarPDropdown">
+          <a class=" dropdown-item" href="{% url 'dogs:list' %}">List</a>
+          <a class=" dropdown-item" href="{% url 'dogs:add' %}">Add</a>
+          <a class=" dropdown-item" href="{% url 'dogs:delete' %}" >Delete</a>
+        </div>
+        </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarVDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dogs Views
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarVDropdown">
+          <a class=" dropdown-item" href="{% url 'dog_views:list_dog' %}">List of the dogs</a>
+          <a class=" dropdown-item" href="{% url 'dog_views:add_dog' %}">Add new dog</a>
+          <a class=" dropdown-item" href="{% url 'dog_views:list_owner' %}" >List of owners</a>
+        <a class=" dropdown-item" href="{% url 'dog_views:add_owner' %}" >Add new owner</a>
+        </div>
+
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
@@ -34,12 +62,12 @@
 
 
 {% endblock %}
-<div class="container-fluid mx-0 px-0 my-5" >
+<div class="container-fluid mx-20 px-0 my-5" >
   <footer
           class="text-center fixed-bottom text-lg-start text-white"
           style="background-color: #1c2331"
           >
-    <section
+   <!-- <section
              class="d-flex justify-content-between"
              style="background-color: #6351ce">
       <div class="me-5 p-2">
@@ -65,7 +93,7 @@
           <i class="fab fa-github"></i>
         </a>
       </div>
-    </section>
+    </section>-->
     <section class="">
       <div class="container text-center text-md-start ">
         <div class="row">
