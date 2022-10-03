@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{%extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block content %}
+<h3>{{owner.name}}'dog list: </h3>
+<ul>
+{% for dog in dogs %}
+    <li>{{ dog.name }} - {{ dog.age }} </li>
+{% endfor %}
+</ul>
+<a href="{% url 'dog_views:list_owner' %}">Go back to the owner list</a>
+{% endblock %}
+
+</body>
+</html>

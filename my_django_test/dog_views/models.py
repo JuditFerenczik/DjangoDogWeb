@@ -46,4 +46,4 @@ class Doggo(models.Model):
         return reverse('doggo_detail', kwargs={"pk": self.pk})
 
     def __str__(self):
-        return f"{self.name} is a {self.age} years old {self.breed} doggo with the owner {self.owner}\n"
+        return f"{self.name} is a {self.age} years old {self.breed} dog with owner {self.owner}\n"

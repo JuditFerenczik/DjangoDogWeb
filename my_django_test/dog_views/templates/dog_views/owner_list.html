@@ -7,11 +7,13 @@
 </head>
 <body>
 {% block content %}
+<h4>List of all owners</h4>
 <ul>
     {% for owner in owner_list %}
     <li> {{owner.name }} - {{owner.age }}</li>
     <a href="{% url 'dog_views:delete_owner' owner.id %}"> Delete {{owner.name}}</a>
     <a href="{% url 'dog_views:edit_owner' owner.id %}"> Edit ({{owner.name}})</a>
+    <a href="{% url 'dog_views:owner_dog' owner.id  %}">Check {{owner.name}}'s dogs list </a>
     {% endfor %}
 </ul>
 {% endblock %}

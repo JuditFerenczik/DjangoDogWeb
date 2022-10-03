@@ -27,9 +27,9 @@
         <li>
           <a class="nav-link active" href="{% url 'base' %}">Home</a>
         </li>
-        <li>
+       <!-- <li>
           <a class=" nav-link"  href="{% url 'new_app:example' %}">New_app</a>
-        </li>
+        </li>-->
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarPDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dogs Basics
@@ -57,6 +57,9 @@
   </div>
 </nav>
 <h1 class="text-center">Welcome to the Webpage</h1>
+
+{% block content %}
+
 {% if user.is_authenticated %}
     <p>You are logged in</p>
     <p>Welcome {{user.username}}</p>
@@ -65,9 +68,6 @@
     <p>You are not logged in!</p>
     <a href="{% url 'login' %}">Login</a>
 {% endif %}
-{% block content %}
-
-
 {% endblock %}
 <div class="container-fluid mx-20 px-0 my-5" >
   <footer

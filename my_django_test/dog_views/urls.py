@@ -9,6 +9,7 @@ urlpatterns = [
     path('list/', views.DoggoListView.as_view(), name='list_dog'),
     path('add/', views.DoggoCreateView.as_view(), name='add_dog'),
     path('add_owner/', views.OwnerCreateView.as_view(), name='add_owner'),
+    path('owner/<int:pk>', views.dogs_by_owner, name='owner_dog'),
     path('list/delete_dog/<int:pk>', views.DoggoDeleteView.as_view(), name='delete_dog'),
     path('delete_owner/<int:pk>', views.OwnerDeleteView.as_view(), name='delete_owner'),
     path('detail_dog/<int:pk>', views.DoggoDetailView.as_view(), name='detail_dog'),
